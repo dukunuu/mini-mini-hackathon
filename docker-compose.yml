@@ -1,0 +1,40 @@
+services:
+  frontend:
+    image: app_front:local
+    build:
+      context: .
+      dockerfile: docker/front.Dockerfile
+    command: npm run dev
+    volumes:
+      - ./frontend/:/code
+      - app_front_node_modules:/code/node_modules
+    env_file:
+      - ./secret/.env
+    ports:
+      - 5173:5173
+    networks:
+      - app_network
+
+  postgres:
+    image: postgres:14.11-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+    env_file:
+      - ./secret/.env
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+    environment:
+      - POSTGRES_USER=app_user
+      - POSTGRES_PASSWORD=app_password
+      - POSTGRES_DB=app_db
+      - POSTGRES_HOST=postgres
+volumes:
+  db_data:
+  app_back_node_modules:
+  app_front_node_modules:
+
+networks:
+  app_network:
+
