@@ -7,7 +7,6 @@ import { Menu, X, Globe } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -23,8 +22,16 @@ export function Navbar() {
           <nav className="hidden md:flex items-center space-x-8">
             
             <div className="flex items-center space-x-6">
-              <Button variant="ghost" size="sm">Нэвтрэх</Button>
-              <Button size="sm">Бүртгүүлэх</Button>
+              <Button variant="ghost" size="sm">
+                <Link to="/sign-in">
+                  Нэвтрэх
+                </Link>
+              </Button>
+              <Button size="sm">
+                <Link to="/sign-up">
+                  Бүртгүүлэх
+                </Link>
+                </Button>
             </div>
           </nav>
           
@@ -42,18 +49,6 @@ export function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden py-4">
             <nav className="flex flex-col space-y-4">
-              <div className="space-y-2">
-                <div className="font-medium text-sm">Language</div>
-                <div className="pl-4 space-y-2">
-                  <Link to="/?lang=de" className="block text-sm hover:text-primary">
-                    🇩🇪 Deutsch
-                  </Link>
-                  <Link to="/?lang=en" className="block text-sm hover:text-primary">
-                    🇺🇸 English
-                  </Link>
-                </div>
-              </div>
-              
               <div className="flex flex-col space-y-2 pt-4">
                 <Button variant="outline" size="sm" className="w-full">Log In</Button>
                 <Button size="sm" className="w-full">Register</Button>

@@ -26,7 +26,6 @@ const formSchema = z.object({
 });
 
 export default function SignUpPage() {
-  // const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,8 +46,6 @@ export default function SignUpPage() {
       console.log(userCredential)
 
       toast.success("Амжилттай бүртгүүллээ!");
-      // router.push("/dashboard");
-      
     } catch (error: any) {
       let errorMessage = "Бүртгүүлэхэд алдаа гарлаа";
       

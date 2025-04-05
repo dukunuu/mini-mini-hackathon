@@ -10,7 +10,7 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-white dark:bg-background; /* Use variable for dark bg */
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -18,75 +18,90 @@ body {
 }
 
 :root {
+  /* Light mode remains largely unchanged, but ensure consistency */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  --background: oklch(1 0 0); /* White */
+  --foreground: oklch(0.15 0.01 275); /* Dark grey/purple tint */
+  --card: oklch(1 0 0); /* White */
+  --card-foreground: oklch(0.15 0.01 275);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
+  --popover-foreground: oklch(0.15 0.01 275);
+  --primary: oklch(0.5 0.15 275); /* Medium Purple */
+  --primary-foreground: oklch(0.98 0 0); /* Near White */
+  --secondary: oklch(0.96 0.01 275); /* Very Light Purple/Grey */
+  --secondary-foreground: oklch(0.3 0.05 275); /* Darker Purple */
+  --muted: oklch(0.96 0.01 275);
+  --muted-foreground: oklch(0.5 0.03 275); /* Medium Grey/Purple */
+  --accent: oklch(0.94 0.02 275); /* Light Purple/Grey */
+  --accent-foreground: oklch(0.4 0.1 275); /* Medium Dark Purple */
+  --destructive: oklch(0.577 0.245 27.325); /* Keep similar red */
+  --border: oklch(0.9 0.02 275); /* Light grey/purple border */
+  --input: oklch(0.9 0.02 275);
+  --ring: oklch(0.6 0.1 275); /* Brighter purple for focus */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --sidebar: oklch(0.98 0.005 275); /* Very light grey/purple */
+  --sidebar-foreground: oklch(0.15 0.01 275);
+  --sidebar-primary: oklch(0.5 0.15 275);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.94 0.02 275);
+  --sidebar-accent-foreground: oklch(0.4 0.1 275);
+  --sidebar-border: oklch(0.9 0.02 275);
+  --sidebar-ring: oklch(0.6 0.1 275);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
+  /* --- Dark Mode: Purple Theme --- */
+  --background: oklch(0.20 0.08 275); /* Dark Purple/Indigo Background */
+  --foreground: oklch(0.95 0.01 275); /* Light Grey/Lavender Foreground */
+
+  --card: oklch(0.25 0.07 275); /* Slightly Lighter Dark Purple Card */
+  --card-foreground: oklch(0.95 0.01 275); /* Match main foreground */
+
+  --popover: oklch(0.28 0.06 275); /* Slightly lighter popover */
+  --popover-foreground: oklch(0.95 0.01 275);
+
+  --primary: oklch(0.7 0.15 280); /* Brighter Violet/Purple Primary */
+  --primary-foreground: oklch(0.15 0.02 280); /* Dark Purple text on primary */
+
+  --secondary: oklch(0.30 0.05 275); /* Dark muted purple */
+  --secondary-foreground: oklch(0.90 0.015 275); /* Lighter foreground for secondary */
+
+  --muted: oklch(0.30 0.05 275); /* Same as secondary background */
+  --muted-foreground: oklch(0.65 0.03 275); /* Medium Grey/Purple muted text */
+
+  --accent: oklch(0.35 0.06 275); /* Slightly lighter accent background */
+  --accent-foreground: oklch(0.95 0.01 275); /* Light foreground for accent */
+
+  --destructive: oklch(0.65 0.2 15); /* Slightly adjusted dark red */
+
+  --border: oklch(0.4 0.04 275 / 60%); /* Semi-transparent purple border */
+  --input: oklch(0.3 0.05 275 / 70%); /* Darker semi-transparent input bg */
+  --ring: oklch(0.75 0.12 280); /* Bright Violet/Purple focus ring */
+
+  /* Chart colors might need more specific adjustment based on context */
+  --chart-1: oklch(0.65 0.15 280); /* Use primary purple */
+  --chart-2: oklch(0.7 0.1 240); /* A contrasting blue */
+  --chart-3: oklch(0.75 0.1 300); /* A contrasting magenta */
+  --chart-4: oklch(0.8 0.1 150); /* A contrasting teal */
+  --chart-5: oklch(0.7 0.1 50); /* A contrasting orange/yellow */
+
+  /* Sidebar using similar dark purple theme */
+  --sidebar: oklch(0.20 0.08 275); /* Match main background */
+  --sidebar-foreground: oklch(0.95 0.01 275);
+  --sidebar-primary: oklch(0.7 0.15 280); /* Match main primary */
+  --sidebar-primary-foreground: oklch(0.15 0.02 280);
+  --sidebar-accent: oklch(0.35 0.06 275); /* Match main accent */
+  --sidebar-accent-foreground: oklch(0.95 0.01 275);
+  --sidebar-border: oklch(0.4 0.04 275 / 60%); /* Match main border */
+  --sidebar-ring: oklch(0.75 0.12 280); /* Match main ring */
 }
 
 @theme inline {
+  /* These map the CSS variables to Tailwind utility classes - No changes needed here */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -132,3 +147,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
