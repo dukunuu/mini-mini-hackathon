@@ -121,7 +121,7 @@ export default function SignInPage() {
             </Form>
             <div className="mt-4 text-center text-sm">
               Бүртгэлгүй юу?{" "}
-              <Link to="/signUp" className="text-blue-600 hover:underline">
+              <Link to="/sign-up" className="text-blue-600 hover:underline">
                 Бүртгүүлэх
               </Link>
             </div>
