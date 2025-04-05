@@ -71,10 +71,10 @@ export function Features() {
       <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-            Core Features
+            Үндсэн функцууд
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to track your study progress and stay motivated
+            Хичээлийнхээ явцыг хянаж, урам зоригтой байхын тулд танд хэрэгтэй бүх зүйл
           </p>
         </div>
         
@@ -83,9 +83,9 @@ export function Features() {
             <div className="bg-primary/10 p-3 rounded-full w-fit mb-4 animate-pulse">
               <Clock className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Time Tracking</h3>
+            <h3 className="text-xl font-semibold mb-2">Цаг хянах</h3>
             <p className="text-muted-foreground">
-              Easily track your study sessions with our intuitive timer
+              Манай ухаалаг таймер ашиглан хичээлээ хялбархан хянаарай
             </p>
           </div>
           
@@ -93,9 +93,9 @@ export function Features() {
             <div className="bg-primary/10 p-3 rounded-full w-fit mb-4 animate-pulse">
               <Target className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Goal Setting</h3>
+            <h3 className="text-xl font-semibold mb-2">Зорилго тогтоох</h3>
             <p className="text-muted-foreground">
-              Set and track your study goals with visual progress indicators
+              Зорилгоо тодорхойлж дүрсэн үзүүлэлтүүдээр явцаа хянаарай
             </p>
           </div>
           
@@ -103,9 +103,9 @@ export function Features() {
             <div className="bg-primary/10 p-3 rounded-full w-fit mb-4 animate-pulse">
               <Trophy className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Achievements</h3>
+            <h3 className="text-xl font-semibold mb-2">Амжилтууд</h3>
             <p className="text-muted-foreground">
-              Earn badges and rewards for reaching your study milestones
+              Хичээлийнхээ амжилтад хүрсэн тэмдэг, шагналыг аваарай
             </p>
           </div>
           
@@ -113,9 +113,9 @@ export function Features() {
             <div className="bg-primary/10 p-3 rounded-full w-fit mb-4 animate-pulse">
               <BarChart3 className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Analytics</h3>
+            <h3 className="text-xl font-semibold mb-2">Аналитик</h3>
             <p className="text-muted-foreground">
-              Detailed insights into your study patterns and progress
+              Таны суралцах хэв маяг, ахиц дэвшлийн талаарх дэлгэрэнгүй мэдээлэл
             </p>
           </div>
           
@@ -123,9 +123,9 @@ export function Features() {
             <div className="bg-primary/10 p-3 rounded-full w-fit mb-4 animate-pulse">
               <Cloud className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Cloud Sync</h3>
+            <h3 className="text-xl font-semibold mb-2">Үүлэн синк</h3>
             <p className="text-muted-foreground">
-              Access your data anywhere with automatic cloud synchronization
+              Автомат үүлэн синхрончлолын тусламжтайгаар хаана ч байсан өгөгдөлдөө хандаарай 
             </p>
           </div>
           
@@ -133,9 +133,9 @@ export function Features() {
             <div className="bg-primary/10 p-3 rounded-full w-fit mb-4 animate-pulse">
               <Zap className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Quick Actions</h3>
+            <h3 className="text-xl font-semibold mb-2">Шуурхай үйлдэл</h3>
             <p className="text-muted-foreground">
-              Start tracking with just one click using our quick action buttons
+              Манай хурдан үйлдлийн товчлууруудыг ашиглан нэг товшилтоор хянаарай
             </p>
           </div>
         </div>

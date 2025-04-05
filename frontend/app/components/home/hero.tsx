@@ -22,7 +22,7 @@ export function Hero() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="gap-2 hover:scale-105 transition-transform duration-300 animate-bounce-subtle">
-              Get Started Now <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+              Хэрэглэж эхлэх<ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </div>
         </div>
