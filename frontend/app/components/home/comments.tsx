@@ -1,4 +1,7 @@
 import { Star } from "lucide-react";
+import first from "../../assets/first.png"
+import second from "../../assets/second.png"
+import male from "../../assets/male.png"
 
 export function Testimonials() {
   return (
@@ -12,10 +15,10 @@ export function Testimonials() {
       <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-            What Our Users Say
+            Бидний хэрэглэгчид юу гэж байна вэ?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Join thousands of students who have improved their study habits with Alchemist
+            Alchemist-аар суралцах дадлаа сайжруулсан мянга мянган оюутнуудтай нэгдээрэй
           </p>
         </div>
         
@@ -26,14 +29,15 @@ export function Testimonials() {
                 <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
               ))}
             </div>
+            
             <p className="text-muted-foreground mb-4">
-              "Alchemist has completely transformed how I track my study time. The analytics are incredibly helpful!"
+              "Alchemist намайг цагаа хэрхэн хянахыг бүрэн өөрчилсөн. Аналитик нь үнэхээр тустай!"
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 animate-pulse"></div>
+            <img src={first} alt="Person" className="w-8"/>
               <div>
-                <h4 className="font-medium">Sarah Johnson</h4>
-                <p className="text-sm text-muted-foreground">University Student</p>
+                <h4 className="font-medium">Н. Даваасүрэн</h4>
+                <p className="text-sm text-muted-foreground">Их сургуулийн оюутан</p>
               </div>
             </div>
           </div>
@@ -45,13 +49,13 @@ export function Testimonials() {
               ))}
             </div>
             <p className="text-muted-foreground mb-4">
-              "The goal setting features keep me motivated, and I love seeing my progress over time."
+              "Зорилго тодорхойлох функц нь намайг урам зоригтой болгодог нь гайхайлтай."
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <img src={male} alt="Person" className="w-8"/>
               <div>
-                <h4 className="font-medium">Michael Chen</h4>
-                <p className="text-sm text-muted-foreground">High School Student</p>
+                <h4 className="font-medium">Э. Нямдорж</h4>
+                <p className="text-sm text-muted-foreground">Ахлах ангийн сурагч</p>
               </div>
             </div>
           </div>
@@ -62,14 +66,15 @@ export function Testimonials() {
                 <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
               ))}
             </div>
+            
             <p className="text-muted-foreground mb-4">
-              "The cloud sync feature is amazing - I can track my studies from any device!"
+              "Үүлэн синхрончлолын функц нь гайхалтай - Би ямар ч төхөөрөмжөөс хичээлээ хянах боломжтой!"
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <img src={second} alt="Person" className="w-8"/>
               <div>
-                <h4 className="font-medium">Emma Davis</h4>
-                <p className="text-sm text-muted-foreground">College Student</p>
+                <h4 className="font-medium">Д. Болд</h4>
+                <p className="text-sm text-muted-foreground">Их сургуулийн оюутан</p>
               </div>
             </div>
           </div>

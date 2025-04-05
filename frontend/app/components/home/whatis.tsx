@@ -15,7 +15,7 @@ export function WhatIsAthenify() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left">
             <h2 className="text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-              What is Alchemist?
+              Alchemist гэж юу вэ?
             </h2>
             <h3 className="text-xl font-semibold text-primary mb-6">
               Хичээлээ нэг дороос хянаж, нийт оноо, шаардлагатай оноог тогтмол хадгалах
@@ -40,9 +40,9 @@ export function WhatIsAthenify() {
                   <BarChart3 className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg">Beautiful dashboard</h4>
+                  <h4 className="font-medium text-lg">Үзэмжтэй хяналтын самбар</h4>
                   <p className="text-muted-foreground">
-                    View all your study metrics in one place
+                    Өөрийн судалгааны бүх хэмжигдэхүүнийг нэг дороос харна
                   </p>
                 </div>
               </div>
@@ -52,9 +52,9 @@ export function WhatIsAthenify() {
                   <Cloud className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg">Cloud-based</h4>
+                  <h4 className="font-medium text-lg">Үүлэн суурьтай</h4>
                   <p className="text-muted-foreground">
-                    Access your data anywhere, on any device
+                    Өөрийн өгөгдөлд хаанаас ч, ямар ч төхөөрөмжөөс хандах боломжтой
                   </p>
                 </div>
               </div>
@@ -64,9 +64,9 @@ export function WhatIsAthenify() {
                   <Zap className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-lg">Easy to use</h4>
+                  <h4 className="font-medium text-lg">Хэрэглэхэд хялбар</h4>
                   <p className="text-muted-foreground">
-                    Simple, intuitive interface for effortless tracking
+                    Хүндрэлгүй хянах энгийн, ойлгомжтой интерфэйс
                   </p>
                 </div>
               </div>

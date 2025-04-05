@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { Button } from "../ui/button";
 import { Menu, X, Globe } from "lucide-react";
+import logos from "../../assets/logos.png"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ export function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link to="/" className="flex items-center space-x-2">
+              <img src={logos} alt="Logo" className="w-8"/>
               <span className="text-xl font-bold">Alchemist</span>
             </Link>
           </div>
