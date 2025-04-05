@@ -1,24 +1,23 @@
-import { Link } from "react-router";
+import { Hero } from "../../components/home/hero";
+import { Features } from "../../components/home/features";
+import { Testimonials } from "../../components/home/comments";
+import { WhatIsAthenify } from "../../components/home/whatis";
 import type { Route } from "../+types/home";
-
-import { Button } from "~/components/ui/button"; // Make sure you have this shadcn button component
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Core Features Summary" },
+    { name: "description", content: "Track your courses, manage deadlines, and monitor your progress" },
   ];
 }
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-      <h1 className="text-2xl font-bold">Welcome to My App</h1>
-      <Button asChild>
-        <Link to="/sign-up">
-          Sign In
-        </Link>
-      </Button>
-    </div>
+    <main className="flex min-h-screen flex-col">
+      <Hero />
+      <WhatIsAthenify />
+      <Features />
+      <Testimonials />
+    </main>
   );
 }
