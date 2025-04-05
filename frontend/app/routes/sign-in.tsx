@@ -10,7 +10,9 @@ import { toast } from "sonner";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "~/lib/firebase";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { PublicRoute } from "~/components/auth/PublicRoute";
+import { useAuthStore } from "~/stores/auth.store";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -21,7 +23,7 @@ const formSchema = z.object({
   }),
 });
 
-export default function LoginPage() {
+export default function SignInPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,6 +31,8 @@ export default function LoginPage() {
       password: "",
     },
   });
+  const navigate = useNavigate();
+  const login = useAuthStore((state) => state.login);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
@@ -38,12 +42,10 @@ export default function LoginPage() {
         values.password
       );
 
-      console.log(userCredential)
-      
-      // User successfully logged in
+      login(userCredential.user);
+
       toast.success("Амжилттай нэвтэрлээ!");
-      // router.push("/");
-      window.location.href = "/signup"
+      navigate("/dashboard");
     } catch (error: any) {
       let errorMessage = "Нэвтрэхэд алдаа гарлаа";
       
@@ -67,71 +69,73 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">
-            Эргэн тавтай морил
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>И-мэйл</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="жишээ@email.com"
-                        {...field}
-                        type="email"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Нууц үг</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="••••••••"
-                        {...field}
-                        type="password"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full">
-                Нэвтрэх
-              </Button>
-            </form>
-          </Form>
-          <div className="mt-4 text-center text-sm">
-            Бүртгэлгүй юу?{" "}
-            <Link to="/signUp" className="text-blue-600 hover:underline">
-              Бүртгүүлэх
-            </Link>
-          </div>
-          <div className="mt-2 text-center text-sm">
-            <Link
-              to="/forgot-password"
-              className="text-gray-600 hover:underline"
-            >
-              Нууц үг мартсан?
-            </Link>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <PublicRoute>
+      <main className="container mx-auto p-4 pt-20 flex flex-col items-center">
+        <Card className="w-full max-w-md">
+          <CardHeader className="space-y-1">
+            <CardTitle className="text-2xl font-bold text-center">
+              Эргэн тавтай морил
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>И-мэйл</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="жишээ@email.com"
+                          {...field}
+                          type="email"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Нууц үг</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="••••••••"
+                          {...field}
+                          type="password"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" className="w-full">
+                  Нэвтрэх
+                </Button>
+              </form>
+            </Form>
+            <div className="mt-4 text-center text-sm">
+              Бүртгэлгүй юу?{" "}
+              <Link to="/signUp" className="text-blue-600 hover:underline">
+                Бүртгүүлэх
+              </Link>
+            </div>
+            <div className="mt-2 text-center text-sm">
+              <Link
+                to="/forgot-password"
+                className="text-gray-600 hover:underline"
+              >
+                Нууц үг мартсан?
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      </main>
+    </PublicRoute>
   );
 }

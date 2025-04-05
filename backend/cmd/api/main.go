@@ -34,7 +34,7 @@ func main() {
 	// --- Instantiate Handlers --- // <-- ADD THIS
 	courseHandler := handlers.NewCourseHandler(dbService)
 	taskHandler := handlers.NewTaskHandler(dbService)
-	// userHandler := handlers.NewUserHandler(dbService) // If you create user handlers
+	userHandler := handlers.NewUserHandler(dbService) // Instantiate User Handler
 
 	r := chi.NewRouter()
 
@@ -59,12 +59,21 @@ func main() {
 	r.Route("/api/v1", func(r chi.Router) {
 
 		r.Route("/users", func(r chi.Router) {
-			// Define public user routes if needed
-			// e.g., r.Post("/sync", userHandler.SyncUser) // Requires auth
+			// Public route for creating a user (does not require authentication)
+			r.Post("/", userHandler.CreateUser)
+
+			// Define other public user routes if needed
+			// e.g., password reset request
+
+			// Routes that *do* require authentication should be inside the auth group below
+			// e.g., fetching user profile, updating user details
 		})
 
 		r.Group(func(r chi.Router) {
 			r.Use(authService.Middleware())
+
+			// Authenticated user routes (example)
+			// r.Get("/users/me", userHandler.GetCurrentUserProfile) // Hypothetical handler
 
 			r.Route("/courses", func(r chi.Router) {
 				r.Post("/", courseHandler.CreateCourse)
@@ -81,7 +90,7 @@ func main() {
 
 			r.Route("/tasks", func(r chi.Router) {
 				r.Get("/{taskID}", taskHandler.GetTask)
-				r.Put("/{taskID}", taskHandler.UpdateTask) // Full update
+				r.Put("/{taskID}", taskHandler.UpdateTask)                    // Full update
 				r.Patch("/{taskID}/status", taskHandler.UpdateTaskStatusOnly) // Partial status update
 				r.Delete("/{taskID}", taskHandler.DeleteTask)
 			})
@@ -120,5 +129,3 @@ func main() {
 		log.Println("INFO: Server gracefully stopped.")
 	}
 }
-
-

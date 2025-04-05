@@ -28,10 +28,10 @@ migrate-create:
 	docker compose -f docker-compose.yml --env-file ./secret/.env run --rm backend migrate create -seq -ext sql -dir $(MIGRATION_PATH) $(filter-out $@,$(MAKECMDGOALS))
 
 migrate-up:
-	docker compose -f docker-compose.yml --env-file ./secret/.env run --rm backend migrate -path $(MIGRATION_PATH) -database $(DB_ADDRESS) up
+	docker compose -f docker-compose.yml --env-file ./secret/.env run --rm backend migrate -path $(MIGRATION_PATH) -database $(DB_URL) up
 
 migrate-down:
-	docker compose -f docker-compose.yml --env-file ./secret/.env run --rm backend migrate -path $(MIGRATION_PATH) -database $(DB_ADDRESS) down $(filter-out $@,$(MAKECMDGOALS))
+	docker compose -f docker-compose.yml --env-file ./secret/.env run --rm backend migrate -path $(MIGRATION_PATH) -database $(DB_URL) down $(filter-out $@,$(MAKECMDGOALS))
 
 generate:
 	docker compose -f docker-compose.yml --env-file ./secret/.env run --rm backend sqlc generate
